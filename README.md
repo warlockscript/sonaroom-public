@@ -10,7 +10,32 @@ A professional, cross-platform 3D acoustic simulation and room modeling tool bui
 
 ---
 
-## 🆕 New in 0.3.0
+## 🆕 New in 0.3.3
+
+0.3.2 was never published; 0.3.3 includes everything listed here.
+
+- **Facing**: the source and listener show which way they face, on a map-like compass (front wall
+  south, back wall north, left west, right east; N/S/E/W round the room). Click either in the 3D view,
+  drag the blue ring to turn it and the yellow arrow tip to tilt it (Shift snaps 15°, R resets, one
+  Ctrl+Z per change), or set Turn / Tilt, *Reset* and *Face the listener / source* in their panels.
+  Default: source faces south, listener north. The sound does not use it yet (binaural is next).
+- **Draw Room undo**: Ctrl+Z undoes a drawn room, a Draw Room setting or going back to a rectangular room.
+- **Binaural groundwork**: both engines record where each reflection arrives from, and the SADIE II
+  KU100 HRTF set (Apache 2.0) ships in `app/data/hrtf`. Nothing sounds different yet.
+- **Walk-through auralization**: the listener walks a path once at up to a brisk 1.8 m/s while the audio
+  plays - a straight X/Y line, or one drawn with the mouse in any 3D view (Ctrl for straight stretches),
+  any length - crossfading between room responses every 0.5 m (at most 120 points). The listener's pin
+  walks it in 3D with the sound and stops when it stops; Reset path clears it. Time estimate, Cancel,
+  and Export Walk Audio as a WAV. Mono.
+- **Propagation by material**: each ray loses the surface's absorption at every bounce and is coloured
+  by its strength (bright yellow strong, dim purple weak) - concrete keeps it, acoustic treatment soaks
+  it up. SketchUp rooms are now animated as drawn, with their matched materials.
+- **Material Database Editor**: the plot shows the calculated absorption (and transmission loss on its
+  own axis); NRC/SAA/STC are saved. Saved materials appear in the Product Library under *My Materials*.
+- **3D view**: turntable orbit about the vertical axis - it no longer rolls on its side.
+- **Heatmap**: SketchUp rooms of any shape leave out points outside their walls.
+
+## New in 0.3.0
 
 - **Draw Room**: Room > Draw Room draws the walls in the 3D view as a top plan - click each corner, type
   a length in cm for an exact wall, Shift for 0/45/90 degrees, snapping to a 10 cm grid. Walls have a
